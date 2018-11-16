@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+#icon
+{
+	width:100px;
+	height:100px;
+}
+#preview
+{
+	overflow-y: auto;
+	height: 300px;
+}
+#genBtn
+{
+	padding: 0px;
+    margin-top: 5px;
+}

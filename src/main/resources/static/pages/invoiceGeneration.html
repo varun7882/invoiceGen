@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>invoice generation</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<script src="../js/main.js"></script>
+</head>
+<body class="container">
+		<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img alt="Brand" id="icon" src="../images/icon.jpg" >
+	      </a>
+	      <p style="float:right;margin-top:55px;">GenericStore</p>
+	    </div>
+	  </div>
+	</nav>
+	<div class="row" style="margin: 10px;">
+		<div class="col-md-3">
+		Add Item:
+		</div>
+	</div>
+		<form>
+	  <div class="row">
+	    <div class="col">
+	      <input type="text" id="pname" class="form-control" placeholder="Product Name" required>
+	    </div>
+	    <div class="col">
+	      <input type="number" id="pQuant" class="form-control" placeholder="Quantity" required>
+	    </div>
+	    <div class="col">
+	      <input type="text"  id="pcat" class="form-control" placeholder="Category" required>
+	    </div>
+	    <div class="col">
+	      <input type="number"  id="price" class="form-control" placeholder="Price" required>
+	    </div>
+	    <div class="col">
+	      <input type="number"  id="ptax" class="form-control" placeholder="TaxRate" required>
+	    </div>
+	    <div class="col">
+	      <input type="button" class="form-control btn btn-primary  btn-block" value="Add" placeholder="TaxRate" onclick="addItemToList()">
+	    </div>
+	  </div>
+	</form>
+	<br>
+	<div class="row" style="">
+		<div class="col-md-3">
+		Item Details:
+		</div>
+	</div>
+	<br>
+	<div id="preview" class="row">
+	    <table id="itemTable" class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Category</th>
+                       <th scope="col">Price</th>
+                        <th scope="col">TaxRate</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                  </tbody>
+            </table>
+	 </div>
+	  <div class="row">
+		<input type="text"  id="paidBy" class="form-control col-md-5 offset-md-3" placeholder="Paid By" required>
+	</div>
+	 <div class="row">
+		<div class="col-md-5 offset-md-3" id="genBtn"><button type="submit" class="btn btn-primary  btn-block" onclick="getInvoice()">GenerateInvoice</button></div>
+	</div>
+	<br><br>
+	<div id="invoice" class="row">
+	    <table id="invoiceTable" class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price with Tax</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBodyInvoice">
+                  </tbody>
+            </table>
+	 </div>
+	 <div id="totalPrice">
+	 Total Amount: <p id="sum"></p>
+	 </div>
+</body>
+</html>
